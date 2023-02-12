@@ -28,6 +28,20 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+Future operation() async {
+
+var connection = PostgreSQLConnection(
+"ec2-31-242-24-212.compute-1.amazonaws.com", 
+5432,                                                                      
+"djb7v0k318g55",                                               
+username: "ggfplrsgbytwdc",   
+password: "b72bf90efb5e5f52b3c22a87f7ef5f76f80e663583",
+useSSL: true
+);
+
+await connection.open();
+      print("Connected");
+}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
