@@ -4,6 +4,7 @@ import '../util/my_textfield.dart';
 import '../util/square_tile.dart';
 import '../layout/mobile_body.dart';
 import '../util/my_halfcircle.dart';
+import 'package:postgres/postgres.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -55,6 +56,21 @@ class LoginPage extends StatelessWidget {
               ),
             ),
 
+            
+            Future operation() async {
+
+var connection = PostgreSQLConnection(
+"ec2-31-242-24-212.compute-1.amazonaws.com", // hostURL
+5432,                                                                               // port
+"djb7v0k318g55",                                                         // databaseName
+username: "ggfplrsgbytwdc",   
+password: "b72bf90efb5e5f52b3c22a87f7ef5f76f80e663583",
+useSSL: true
+);
+
+await connection.open();
+      print("Connected");
+}
             new Container(
                 alignment: Alignment.topCenter,
                 padding: new EdgeInsets.only(
